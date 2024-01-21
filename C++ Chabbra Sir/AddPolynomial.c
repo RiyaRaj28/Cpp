@@ -8,7 +8,7 @@ int main(){
     int poly1[deg1+1];
     for(int i=deg1; i>=0; i--){
         printf("Enter constant for x^[%d]:", i);
-        scanf("%d", &poly1[i]);
+        scanf("%d", &poly1[i]); 
     }
 
     printf("Enter degree of polynomial 2:");
