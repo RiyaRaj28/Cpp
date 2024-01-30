@@ -13,7 +13,7 @@ int main(){
     while(i<j)
     {
         sum = sum + arr[i]; 
-        // cout<<sum<<"\n"; 
+        // cout<<sum<<"\n";  
 
         if(sum<maxsum) {
             sum = sum + arr[j];
