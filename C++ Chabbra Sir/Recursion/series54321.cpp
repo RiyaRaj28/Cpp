@@ -3,24 +3,19 @@
 
 int revCount(int n)
 {
-    int result; 
+    int result;
     if(n==1 || n==0)
     {
         printf("%d", n);
-        result = 1; 
+        result = 1;
     }
+
     else
     {
-
-    printf("%d ", n); 
-
-    result = revCount(n-1);
+        printf("%d", n); 
+        result = revCount(n-1); 
     }
     
-
-        return result;  
-
-
 }
 
 int main()

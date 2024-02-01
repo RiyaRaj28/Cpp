@@ -12,10 +12,7 @@ int powSum(int n)
     {
     result = pow(2,n) + powSum(n-1);
     }
-
         return result;  
-
-
 }
 
 int main()
@@ -30,4 +27,4 @@ int main()
 
     return 0; 
     
-}
+} 

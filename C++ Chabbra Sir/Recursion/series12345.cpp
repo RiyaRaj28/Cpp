@@ -2,24 +2,12 @@
 
 int revCount(int n)
 {
-    int result; 
-    if(n==1 || n==0)
+    // int result;                                                                                    
+    if(n>0)
     {
-        printf("%d", n);
-        result = 1; 
+        revCount(n-1);
+        printf("%d", n);  
     }
-    else
-    {
-
-    printf("%d ", n); 
-
-    result = revCount(n-1);
-    }
-    
-
-        return result;  
-
-
 }
 
 int main()
@@ -33,7 +21,6 @@ int main()
     printf("Rev count is :");
     revCount(n); 
 
-
     return 0; 
     
-}
+} 
