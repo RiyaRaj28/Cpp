@@ -1,24 +1,15 @@
 #include <stdio.h>
 
-int revCount(int arr[50])
+int maximum(int arr[50], int n)
 {
-    int result; 
-    if(arr[])
+    if(n==0)
     {
-        printf("%d", n);
-        result = 1; 
+        return 0; 
     }
-    else
-    {
 
-    printf("%d ", n); 
+    int max = maximum(arr, n-1);
 
-    result = revCount(n-1);
-    }
-    
-
-        return result;  
-
+    return arr[n]> max ? arr[n] : max; 
 
 }
 
@@ -26,11 +17,9 @@ int main()
 {
     int arr[] = {1,2,3,5,6,2,56,7,89,99}; 
     
-    int result =  revCount(arr); 
+    int result =  maximum(arr, 10); 
 
-
-    printf("Largest number is :", result);
-
+    printf("Largest number is : %d", result);
 
     return 0; 
     
