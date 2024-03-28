@@ -135,7 +135,7 @@ int delete_after_val(DLLnode* start, int val)
     if(start==NULL)
     {
         printf("Empty list!");
-        return start;  
+        return -1;  
     }
 
     while(curr!=NULL)
@@ -162,20 +162,59 @@ int delete_after_val(DLLnode* start, int val)
 
 }
 
+void insert_before_val(DLLnode **start, int val)
+{
+    DLLnode *temp, *curr; 
+    curr = *start;
+
+    while((curr->data != val) && curr!=NULL)
+    {
+        curr = curr-> next; 
+    } 
+    
+    if(curr==NULL)
+    {
+        printf("Data not found in the list!");
+        exit(1); 
+    }
+
+    printf("Enter data to be inserted before %d :", val); 
+    int data;
+    scanf("%d", &data); 
+    temp = (DLLnode*)malloc(sizeof(DLLnode));
+    temp->data = data; 
+    temp -> next = curr; 
+
+    if(curr==*start)
+    {
+        temp->back = NULL; 
+        *start = temp; 
+    }
+    else
+    {
+        temp->back = curr->back;
+        temp->back->next = temp; 
+    }
+    curr->back = temp; 
+}
+
+
 int main()
 {
     printf("Doubly Linked List\n");
-    DLLnode* start = create2();
-    traverse_forward(start);
-    // traverse_backward(start); 
+    // DLLnode* start = create2();
+    // traverse_forward(start);
+    // // traverse_backward(start); 
 
-    insert_after_val(start, 2);
-    traverse_forward(start); 
-    int result = delete_after_val(start, 2); 
-    printf("Deleted value is %d.\n", result); 
-    traverse_forward(start);
+    // insert_after_val(start, 2);
+    // traverse_forward(start); 
+    // int result = delete_after_val(start, 2); 
+    // printf("Deleted value is %d.\n", result); 
+    // traverse_forward(start);
+
+    DLLnode* start2 = create2();  
+    insert_before_val(&start2, 2); 
+    traverse_forward(start2); 
 
     return 0; 
-
-    
 }
